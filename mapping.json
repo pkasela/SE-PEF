@@ -1,0 +1,24 @@
+{
+	"settings": {
+		"number_of_shards": 1,
+		"number_of_replicas": 1,
+		"similarity": {
+            "dynamicBM25": {
+                "type": "BM25",
+                "b": "1",
+                "k1": "1.75"
+              }
+        }
+	},
+	"mappings": {
+	    "properties": {
+			"text_id": {
+			    "type": "long"
+			},
+			"text": {
+				"type": "text",
+                "similarity": "dynamicBM25" 
+			}
+	    }
+	}
+}
